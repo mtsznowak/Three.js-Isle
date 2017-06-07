@@ -136,6 +136,10 @@
 				mirrorMesh.rotation.x = - Math.PI * 0.5;
 				scene.add( mirrorMesh );
 
+
+
+
+
 				// skybox
 
 				var cubeMap = new THREE.CubeTexture( [] );
@@ -197,7 +201,22 @@
 
 				}
 
-				// beach
+				// models
+
+				var loaderk = new THREE.JSONLoader();
+				loaderk.load('models/ssimpossible_palm_tree_test.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+
+					mesh.position.set( 0, 200, 0 );
+					
+					mesh.scale.set( 50, 50, 50 );
+					
+					mesh.updateMatrix();
+					scene.add( mesh );
+					}
+				);
+
+// 				// beach
 
 				seed = 4;
 
