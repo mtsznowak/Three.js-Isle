@@ -201,21 +201,7 @@
 
 				seed = 4;
 
-				//var camera, scene, renderer;
-
 				var mesh;
-
-				//var mouseX = 0, mouseY = 0;
-
-				//var windowHalfX = window.innerWidth / 2;
-				//var windowHalfY = window.innerHeight / 2;
-
-				///container = document.getElementById( 'container' );
-
-				//camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
-				//camera.position.z = 500;
-
-				//scene = new THREE.Scene();
 
 				var data = generateHeight( 1024, 1024 );
 				var texture = new THREE.CanvasTexture( generateTexture( data, 1024, 1024 ) );
@@ -229,7 +215,7 @@
 				for ( var i = 0, l = geometry.vertices.length; i < l; i ++ ) {
 
 					var x = i % quality, y = Math.floor( i / quality );
-					geometry.vertices[ i ].y = data[ ( x * step ) + ( y * step ) * 1024 ] - 128;
+					geometry.vertices[ i ].y = data[ ( x * step ) + ( y * step ) * 1024 ] - 16;
 					if( i < 32 ) {
 						geometry.vertices[i].y = -128;
 					}
@@ -241,17 +227,61 @@
 					}
 				}
 
+
 				mesh = new THREE.Mesh( geometry, material );
 				mesh.scale.set(3, 3, 3);
-				mesh.position.y = 250;
 				scene.add( mesh );
-/*
-				renderer = new THREE.CanvasRenderer();
-				renderer.setClearColor( 0xbfd1e5 );
-				renderer.setPixelRatio( window.devicePixelRatio );*/
-				//renderer.setSize( window.innerWidth, window.innerHeight );
 
-				//container.innerHTML = "";
+				//
+
+				// beach2
+
+				seed = 4;
+
+				var mesh2;
+
+				var data2 = generateHeight( 1024, 1024 );
+
+				var texture2 = THREE.ImageUtils.loadTexture('./js/textures/sand1.jpg');
+        		var material2 = new THREE.MeshBasicMaterial({map: texture2});
+
+				/*var texture2 = new THREE.CanvasTexture( generateTexture( data2, 1024, 1024 ) );
+				var material2 = new THREE.MeshBasicMaterial( { map: texture2, overdraw: 0.5 } );
+*/
+				var quality = 16, step = 1024 / quality;
+
+				var geometry2 = new THREE.PlaneGeometry( 1000, 1000, quality - 1, quality - 1 );
+				geometry2.rotateX( - Math.PI / 2 );
+
+				for ( var i = 0, l = geometry2.vertices.length; i < l; i ++ ) {
+
+					var x = i % quality, y = Math.floor( i / quality );
+					geometry2.vertices[ i ].y = 25;
+					if( i > 15 && i < 32 ) {
+						geometry2.vertices[i].y = 25;
+					}
+					if( i > 223 && i < 240) {
+						geometry2.vertices[i].y = 25;
+					} 
+					if( i % 16 == 1 || i % 16 == 14) {
+						geometry2.vertices[i].y = 25;
+					}
+					
+					if( i < 16) {
+						geometry2.vertices[i].y = 0;
+					}
+					if( i > 239) {
+						geometry2.vertices[i].y = 0;
+					} 
+					if( i % 16 == 0 || i % 16 == 15) {
+						geometry2.vertices[i].y = 0;
+					}
+				}
+
+
+				mesh2 = new THREE.Mesh( geometry2, material2 );
+				mesh2.scale.set(3, 3, 3);
+				scene.add( mesh2 );
 
 				container.appendChild( renderer.domElement );
 
