@@ -213,8 +213,89 @@
 					
 					mesh.updateMatrix();
 					scene.add( mesh );
+
+					mesh2 = new THREE.Mesh( geometry, materials );
+					mesh2.position.set( -650, 200, -100 );
+					
+					mesh2.scale.set( 30, 30, 30 );
+
+					mesh2.updateMatrix();
+					scene.add( mesh2 );
+
+					mesh3 = new THREE.Mesh( geometry, materials );
+
+					mesh3.position.set( -650, 100, -1250 );
+					
+					mesh3.scale.set( 40, 40, 40 );
+
+					mesh3.updateMatrix();
+					scene.add( mesh3 );
+
+
+					mesh4 = new THREE.Mesh( geometry, materials );
+
+					mesh4.position.set( 1000, 100, -1050 );
+					
+					mesh4.scale.set( 20, 20, 20 );
+
+					mesh4.updateMatrix();
+					scene.add( mesh4 );
+
+					mesh5 = new THREE.Mesh( geometry, materials );
+
+					mesh5.position.set( -700, 100, 1200 );
+					
+					mesh5.scale.set( 60, 60, 60 );
+
+					mesh5.updateMatrix();
+					scene.add( mesh5 );
+
+					mesh6 = new THREE.Mesh( geometry, materials );
+
+					mesh6.position.set( 200, 100, 200 );
+					
+					mesh6.scale.set( 30, 30, 30 );
+					
+					mesh6.updateMatrix();
+					scene.add( mesh6 );
+
+					mesh7 = new THREE.Mesh( geometry, materials );
+
+					mesh7.position.set( -200, -100, 800 );
+					
+					mesh7.scale.set( 50, 50, 50 );
+					
+					mesh7.updateMatrix();
+					scene.add( mesh7 );
 					}
 				);
+/*
+				var loaderk2 = new THREE.JSONLoader();
+				loaderk2.load('models/ssimpossible_palm_tree_test.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+
+					mesh.position.set( -650, 200, -100 );
+					
+					mesh.scale.set( 30, 30, 30 );
+
+					mesh.updateMatrix();
+					scene.add( mesh );
+					}
+				);
+
+				var loaderk3 = new THREE.JSONLoader();
+				loaderk3.load('models/ssimpossible_palm_tree_test.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+
+					mesh.position.set( -250, 100, -1000 );
+					
+					mesh.scale.set( 30, 30, 30 );
+
+					mesh.updateMatrix();
+					scene.add( mesh );
+					}
+				);*/
+
 
 // 				// beach
 
