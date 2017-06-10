@@ -203,20 +203,67 @@
 
 				// models
 
+				var loaderp = new THREE.JSONLoader();
+				loaderp.load('models/Chest.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+					mesh.position.set( 0, 240, -300 );
+					mesh.scale.set( 100, 100, 100 );
+					scene.add( mesh );
+					}
+				);
+
+				var loader = new THREE.JSONLoader();
+				loaderp.load('models/kadlub.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+					mesh.position.set( -2400, 50, -300 );
+					mesh.scale.set( 100, 100, 100 );
+					scene.add( mesh );
+					}
+				);
+				var loader = new THREE.JSONLoader();
+				loaderp.load('models/siedzenia.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+					mesh.position.set( -2400, 50, -300 );
+					mesh.scale.set( 100, 100, 100 );
+					scene.add( mesh );
+					}
+				);
+				var loader = new THREE.JSONLoader();
+				loaderp.load('models/grass.json', function ( geometry, materials ) {
+					mesh = new THREE.Mesh( geometry, materials );
+					mesh.position.set( -300, 300, 0 );
+					mesh.scale.set( 100, 100, 100 );
+					scene.add( mesh );
+
+					mesh2 = new THREE.Mesh( geometry, materials );
+					mesh2.position.set( 300, 300, -500 );
+					mesh2.scale.set( 100, 100, 100 );
+					scene.add( mesh2 );
+
+
+					mesh3 = new THREE.Mesh( geometry, materials );
+					mesh3.position.set( 400, 300, 600 );
+					mesh3.scale.set( 100, 100, 100 );
+					scene.add( mesh3 );
+					}
+				);
+
+
+
 				var loaderk = new THREE.JSONLoader();
 				loaderk.load('models/ssimpossible_palm_tree_test.json', function ( geometry, materials ) {
 					mesh = new THREE.Mesh( geometry, materials );
 
 					mesh.position.set( 0, 200, 0 );
-					
+
 					mesh.scale.set( 50, 50, 50 );
-					
+
 					mesh.updateMatrix();
 					scene.add( mesh );
 
 					mesh2 = new THREE.Mesh( geometry, materials );
 					mesh2.position.set( -650, 200, -100 );
-					
+
 					mesh2.scale.set( 30, 30, 30 );
 
 					mesh2.updateMatrix();
@@ -225,7 +272,7 @@
 					mesh3 = new THREE.Mesh( geometry, materials );
 
 					mesh3.position.set( -650, 100, -1250 );
-					
+
 					mesh3.scale.set( 40, 40, 40 );
 
 					mesh3.updateMatrix();
@@ -235,7 +282,7 @@
 					mesh4 = new THREE.Mesh( geometry, materials );
 
 					mesh4.position.set( 1000, 100, -1050 );
-					
+
 					mesh4.scale.set( 20, 20, 20 );
 
 					mesh4.updateMatrix();
@@ -244,7 +291,7 @@
 					mesh5 = new THREE.Mesh( geometry, materials );
 
 					mesh5.position.set( -700, 100, 1200 );
-					
+
 					mesh5.scale.set( 60, 60, 60 );
 
 					mesh5.updateMatrix();
@@ -253,20 +300,20 @@
 					mesh6 = new THREE.Mesh( geometry, materials );
 
 					mesh6.position.set( 200, 100, 200 );
-					
+
 					mesh6.scale.set( 30, 30, 30 );
-					
+
 					mesh6.updateMatrix();
 					scene.add( mesh6 );
 
-					mesh7 = new THREE.Mesh( geometry, materials );
-
-					mesh7.position.set( -200, -100, 800 );
-					
-					mesh7.scale.set( 50, 50, 50 );
-					
-					mesh7.updateMatrix();
-					scene.add( mesh7 );
+					// mesh7 = new THREE.Mesh( geometry, materials );
+					//
+					// mesh7.position.set( -200, -100, 800 );
+					//
+					// mesh7.scale.set( 50, 50, 50 );
+					//
+					// mesh7.updateMatrix();
+					// scene.add( mesh7 );
 					}
 				);
 /*
@@ -275,7 +322,7 @@
 					mesh = new THREE.Mesh( geometry, materials );
 
 					mesh.position.set( -650, 200, -100 );
-					
+
 					mesh.scale.set( 30, 30, 30 );
 
 					mesh.updateMatrix();
@@ -288,7 +335,7 @@
 					mesh = new THREE.Mesh( geometry, materials );
 
 					mesh.position.set( -250, 100, -1000 );
-					
+
 					mesh.scale.set( 30, 30, 30 );
 
 					mesh.updateMatrix();
@@ -321,7 +368,7 @@
 					}
 					if( i > 223) {
 						geometry.vertices[i].y = -128;
-					} 
+					}
 					if( i % 16  == 0 || i % 16 == 1 || i % 16 == 14 || i % 16 == 15) {
 						geometry.vertices[i].y = -128;
 					}
@@ -362,17 +409,17 @@
 					}
 					if( i > 223 && i < 240) {
 						geometry2.vertices[i].y = 25;
-					} 
+					}
 					if( i % 16 == 1 || i % 16 == 14) {
 						geometry2.vertices[i].y = 25;
 					}
-					
+
 					if( i < 16) {
 						geometry2.vertices[i].y = 0;
 					}
 					if( i > 239) {
 						geometry2.vertices[i].y = 0;
-					} 
+					}
 					if( i % 16 == 0 || i % 16 == 15) {
 						geometry2.vertices[i].y = 0;
 					}
@@ -498,4 +545,3 @@
 		</script>
 	</body>
 </html>
-
